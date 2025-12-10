@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHÀ SIIX - YOUR CLOSET</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo_nhom.jpg" alt="Nhà 6" class="logo-img" width="500" height="500">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#san-pham">SẢN PHẨM</a></li>
+                    <li><a href="products.html">MUA SẮM</a></li>
+                    <li><a href="about.html">NHÀ SIIX</a></li>
+                    <li class="auth-buttons" id="auth-buttons">
+                        <a href="login.html" class="btn-login">ĐĂNG NHẬP</a>
+                        <a href="register.html" class="btn-register">ĐĂNG KÝ</a>
+                    </li>
+                    <li class="user-menu" id="user-menu" style="display: none;">
+                        <span class="user-greeting" id="user-greeting"></span>
+                        <button class="btn-logout" id="btn-logout">ĐĂNG XUẤT</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal modal-hidden">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>ĐĂNG NHẬP</h2>
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <input type="tel" id="login-phone" placeholder="Số điện thoại" required>
+                    <span class="error-msg" id="login-phone-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Mật khẩu" required>
+                    <span class="error-msg" id="login-password-error"></span>
+                </div>
+                <div class="error-msg" id="login-error" style="display:none;"></div>
+                <button type="submit" class="btn btn-outline">Đăng Nhập</button>
+            </form>
+            <p>Chưa có tài khoản? <a href="#" class="switch-modal" data-modal="register-modal">Đăng ký ngay</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal modal-hidden">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>ĐĂNG KÝ</h2>
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <input type="text" id="register-name" placeholder="Họ và tên" required>
+                    <span class="error-msg" id="register-name-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <span class="error-msg" id="register-email-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="register-phone" placeholder="Số điện thoại" required>
+                    <span class="error-msg" id="register-phone-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="register-address" placeholder="Địa chỉ" required>
+                    <span class="error-msg" id="register-address-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-password" placeholder="Mật khẩu" required>
+                    <span class="error-msg" id="register-password-error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-confirm-password" placeholder="Xác nhận mật khẩu" required>
+                    <span class="error-msg" id="register-confirm-error"></span>
+                </div>
+                <div class="error-msg" id="register-error" style="display:none;"></div>
+                <button type="submit" class="btn btn-primary">Đăng Ký</button>
+            </form>
+            <p>Đã có tài khoản? <a href="#" class="switch-modal" data-modal="login-modal">Đăng nhập ngay</a></p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image" style="background-image: url('../assets/images/store-1338629.jpg')">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>BẠN KHÔNG CÓ QUẦN ÁO?</h1>
+                <p>Đây chính là nơi mà những chàng trai luôn tin tưởng</p>
+                <button class="btn btn-outline">LỰA ĐỒ THÔI</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nha-siix">
+        <div class="container">
+            <div class="about-header">
+                <h2><b style="color: var(--primary-color);"">NHÀ SIIX</b> - YOUR CLOSET</h2>
+                <p class="tagline">ĐƠN GIẢN - NÂNG ĐỘNG - CHẤT LƯỢNG</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text-col">
+                    <p>NHÀ SIIX không chỉ là một shop bán quần áo, mà là nơi quy tụ những người trẻ có chung gu thẩm mỹ và nhiệt huyết. Các thiết kế của chúng tôi mang đậm tính đường phố, từ graphic tee độc quyền đến hoodie chất lừ. Đến NHÀ SIIX, bạn không chỉ mua sắm mà còn tìm thấy nguồn cảm hứng để tạo nên phong cách riêng biệt, không hòa lẫn. Hãy để NHÀ SIIX là một phần trong câu chuyện tuổi trẻ của bạn!</p>
+                </div>
+                <div class="about-text-col">
+                    <p>NHÀ SIIX là nơi cập nhật nhanh nhất các trend thời trang đang làm mưa làm gió trên giới trẻ. Chúng tôi mang đến những item độc đáo, có tính cá nhân được đặt cạnh mạnh mẽ mà khác biệt cùng mình. Chọn NHÀ SIIX, làm mới phong cách, bứt phá nó nâng tầm và khẳng định chất lượng!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Trends Section -->
+    <section class="trends" id="san-pham">
+        <div class="container">
+            <div class="trends-header">
+                <h2>NEW TRENDS!!!</h2>
+                <p>Phối đồ cực chất ở đây!</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: STREETWEAR ĐỈNH -->
+                <div class="product-card">
+                    <div id="carousel1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/images/ao1_den.png" alt="Áo" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/quan1.png" alt="Quần" class="d-block w-100">
+                            </div>
+                        </div>
+                        <a href="products.html" class="product-tag">
+                            <span class="tag-text">STREETWEAR ĐỈNH</span>
+                            <span class="tag-detail">Xem chi tiết</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: CARGO CHẤT -->
+                <div class="product-card">
+                    <div id="carousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/images/ao2_jungle.png" alt="Áo" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/quan2.png" alt="Quần" class="d-block w-100">
+                            </div>
+                        </div>
+                        <a href="products.html" class="product-tag">
+                            <span class="tag-text">CARGO CHẤT</span>
+                            <span class="tag-detail">Xem chi tiết</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: BASIC HOÀN HẢO -->
+                <div class="product-card">
+                    <div id="carousel3" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/images/ao3.png" alt="Áo" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/quan3.png" alt="Quần" class="d-block w-100">
+                            </div>
+                        </div>
+                        <a href="products.html" class="product-tag">
+                            <span class="tag-text">BASIC HOÀN HẢO</span>
+                            <span class="tag-detail">Xem chi tiết</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 style="color:var(--primary-color)">KHÔNG BỎ LỠ</h2>
+            <p>Sign up ngay để là người đầu tiên biết về BST mới nhất, nhận Mã Giảm Giá đặc biệt và tham gia các Event của cộng đồng Nhà SIIX nhé!</p>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Để lại email ở tại đây nhé!" required>
+                <button type="submit" class="btn btn-dark">LÊN PHỐ</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-logo">
+                    <img src="../assets/images/logo_nhom.jpg" alt="Nhà 6" class="footer-logo-img">
+                </div>
+
+                <div class="footer-col">
+                    <h4>MENU</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link">Trang Chủ</a></li>
+                        <li><a href="#" class="footer-link">Giới Thiệu</a></li>
+                        <li><a href="#" class="footer-link">Liên Hệ</a></li>
+                        <li><a href="#" class="footer-link">Sản Phẩm</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>DANH MỤC SẢN PHẨM</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link">Áo Thun</a></li>
+                        <li><a href="#" class="footer-link">Áo Khoác/Hoodie</a></li>
+                        <li><a href="#" class="footer-link">Quần Dài/Short</a></li>
+                        <li><a href="#" class="footer-link">Phụ Kiện</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>CHĂM SÓC KHÁCH HÀNG</h4>
+                    <ul>
+                        <li><a href="tips.html" class="footer-link">Tips & Cẩm Nang</a></li>
+                        <li><a href="#" class="footer-link">Chính Sách Vận Chuyển</a></li>
+                        <li><a href="#" class="footer-link">Đổi Trả & Hoàn Tiền</a></li>
+                        <li><a href="#" class="footer-link">Hướng Dẫn Bảo Quản</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>LIÊN HỆ</h4>
+                    <ul>
+                        <li><a href="contact.html" class="footer-link">Gửi Tin Nhắn</a></li>
+                        <li><a href="tel:0987654321" class="footer-link">📱 Hotline: 0987 654 321</a></li>
+                        <li><a href="mailto:info@nhasiix.com" class="footer-link">📧 info@nhasiix.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>VỀ CHÚNG TÔI</h4>
+                    <ul>
+                        <li><a href="about.html" class="footer-link">Câu Chuyện NHÀ 6</a></li>
+                        <li><a href="about.html" class="footer-link">Giá Trị Cốt Lõi</a></li>
+                        <li><a href="about.html" class="footer-link">Tầm Nhìn & Sứ Mệnh</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NHÀ SIIX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>

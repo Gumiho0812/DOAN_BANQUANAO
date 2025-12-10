@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - NHÀ SIIX</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .contact-page {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+        }
+
+        .contact-hero {
+            background: linear-gradient(135deg, #df6743 0%, #c85a3a 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-hero p {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: rgba(223, 103, 67, 0.05);
+            box-shadow: 0 0 0 3px rgba(223, 103, 67, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-msg {
+            font-size: 12px;
+            color: #e74c3c;
+            margin-top: 5px;
+            min-height: 16px;
+            display: none;
+        }
+
+        .error-msg.show {
+            display: block;
+        }
+
+        .form-group input.input-error,
+        .form-group textarea.input-error {
+            border-color: #e74c3c;
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #b8523c;
+            transform: scale(1.02);
+        }
+
+        .submit-btn:disabled {
+            background-color: var(--border-color);
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-icon {
+            font-size: 24px;
+            min-width: 30px;
+            color: var(--primary-color);
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-content strong {
+            display: block;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .info-content span {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background-color: #b8523c;
+            transform: scale(1.1);
+        }
+
+        .success-message {
+            background-color: rgba(39, 174, 96, 0.1);
+            border: 2px solid #27ae60;
+            color: #27ae60;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-form {
+                order: 2;
+            }
+
+            .contact-info {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 40px 0;
+            }
+
+            .contact-hero h1 {
+                font-size: 32px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .contact-form h2 {
+                font-size: 24px;
+            }
+
+            .info-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo_nhom.jpg" alt="Nhà SIIX" class="logo-img" width="500" height="500">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="products.html">MUA SẮM</a></li>
+                    <li><a href="about.html">NHÀ SIIX</a></li>
+                    <li><a href="contact.html">LIÊN HỆ</a></li>
+                    <li class="auth-buttons" id="auth-buttons">
+                        <a href="login.html" class="btn-login">ĐĂNG NHẬP</a>
+                        <a href="register.html" class="btn-register">ĐĂNG KÝ</a>
+                    </li>
+                    <li class="user-menu" id="user-menu" style="display: none;">
+                        <span class="user-greeting" id="user-greeting"></span>
+                        <button class="btn-logout" id="btn-logout">ĐĂNG XUẤT</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>LIÊN HỆ VỚI CHÚNG TÔI</h1>
+            <p>Chúng tôi luôn sẵn sàng lắng nghe ý kiến của bạn</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>GỬI TIN NHẮN</h2>
+                    
+                    <div class="success-message" id="success-message">
+                        ✓ Cảm ơn bạn! Tin nhắn của bạn đã được gửi thành công. Chúng tôi sẽ phản hồi trong 24 giờ.
+                    </div>
+
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Họ và Tên</label>
+                            <input type="text" id="contact-name" placeholder="Nhập họ và tên" required>
+                            <span class="error-msg" id="contact-name-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" placeholder="Nhập email của bạn" required>
+                            <span class="error-msg" id="contact-email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-phone">Số Điện Thoại</label>
+                            <input type="tel" id="contact-phone" placeholder="Nhập số điện thoại" required>
+                            <span class="error-msg" id="contact-phone-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject">Tiêu Đề</label>
+                            <input type="text" id="contact-subject" placeholder="Chủ đề liên hệ" required>
+                            <span class="error-msg" id="contact-subject-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Tin Nhắn</label>
+                            <textarea id="contact-message" placeholder="Viết tin nhắn của bạn tại đây..." required></textarea>
+                            <span class="error-msg" id="contact-message-error"></span>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <!-- Address -->
+                    <div class="info-card">
+                        <h3>📍 Địa Chỉ</h3>
+                        <div class="info-item">
+                            <div class="info-content">
+                                <strong>Trụ Sở Chính</strong>
+                                <span>140 Lê Trọng Tấn.St, TP.HCM, Việt Nam</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="info-card">
+                        <h3>📞 Thông Tin Liên Hệ</h3>
+                        <div class="info-item">
+                            <div class="info-icon">📱</div>
+                            <div class="info-content">
+                                <strong>Hotline</strong>
+                                <span><a href="tel:0987654321" style="color: var(--primary-color); text-decoration: none;">0987 654 321</a></span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📧</div>
+                            <div class="info-content">
+                                <strong>Email</strong>
+                                <span><a href="mailto:info@nhasiix.com" style="color: var(--primary-color); text-decoration: none;">info@nhasiix.com</a></span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">⏰</div>
+                            <div class="info-content">
+                                <strong>Giờ Làm Việc</strong>
+                                <span>T2 - T6: 09:00 - 18:00<br>T7 - CN: 10:00 - 17:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="info-card">
+                        <h3>🤝 Kết Nối Với Chúng Tôi</h3>
+                        <p>Theo dõi NHÀ SIIX trên các nền tảng xã hội để nhận những cập nhật mới nhất, khuyến mãi và các xu hướng thời trang.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram">📷</a>
+                            <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook">f</a>
+                            <a href="https://tiktok.com" target="_blank" class="social-btn" title="TikTok">🎵</a>
+                            <a href="https://twitter.com" target="_blank" class="social-btn" title="Twitter">𝕏</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>NHÀ SIIX</h4>
+                <p>Thương hiệu thời trang Local Brand với sứ mệnh mang đến phong cách sống cho giới trẻ Việt Nam.</p>
+            </div>
+            <div class="footer-col">
+                <h4>LIÊN KẾT</h4>
+                <a href="index.html" class="footer-link">Trang Chủ</a>
+                <a href="products.html" class="footer-link">Mua Sắm</a>
+                <a href="about.html" class="footer-link">Về Chúng Tôi</a>
+                <a href="contact.html" class="footer-link">Liên Hệ</a>
+            </div>
+            <div class="footer-col">
+                <h4>HỖ TRỢ</h4>
+                <a href="#" class="footer-link">Chính Sách Đổi Trả</a>
+                <a href="#" class="footer-link">Hướng Dẫn Chọn Size</a>
+                <a href="#" class="footer-link">Câu Hỏi Thường Gặp</a>
+            </div>
+            <div class="footer-col">
+                <h4>LIÊN HỆ</h4>
+                <p style="font-size: 14px; line-height: 1.8;">
+                    📧 Email: info@nhasiix.com<br>
+                    📱 Hotline: 0987 654 321<br>
+                    📍 Hà Nội, Việt Nam
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color); margin-top: 40px; color: var(--text-light); font-size: 12px;">
+            <p>&copy; 2024 NHÀ SIIX. All rights reserved. | Made with 🖤</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        const validators = {
+            name: (val) => val.trim().length >= 3,
+            email: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+            phone: (val) => /^[0-9]{10}$/.test(val.replace(/\s+/g, '')),
+            subject: (val) => val.trim().length >= 5,
+            message: (val) => val.trim().length >= 10
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserStatus();
+            setupContactForm();
+        });
+
+        function setupContactForm() {
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', handleContactSubmit);
+            }
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            clearErrors('contact-form');
+
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const phone = document.getElementById('contact-phone').value.trim();
+            const subject = document.getElementById('contact-subject').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+
+            let hasError = false;
+
+            if (!name) {
+                showError('contact-name', 'Vui lòng nhập họ và tên');
+                hasError = true;
+            } else if (!validators.name(name)) {
+                showError('contact-name', 'Họ và tên phải ít nhất 3 ký tự');
+                hasError = true;
+            }
+
+            if (!email) {
+                showError('contact-email', 'Vui lòng nhập email');
+                hasError = true;
+            } else if (!validators.email(email)) {
+                showError('contact-email', 'Email không hợp lệ');
+                hasError = true;
+            }
+
+            if (!phone) {
+                showError('contact-phone', 'Vui lòng nhập số điện thoại');
+                hasError = true;
+            } else if (!validators.phone(phone)) {
+                showError('contact-phone', 'Số điện thoại phải có 10 chữ số');
+                hasError = true;
+            }
+
+            if (!subject) {
+                showError('contact-subject', 'Vui lòng nhập tiêu đề');
+                hasError = true;
+            } else if (!validators.subject(subject)) {
+                showError('contact-subject', 'Tiêu đề phải ít nhất 5 ký tự');
+                hasError = true;
+            }
+
+            if (!message) {
+                showError('contact-message', 'Vui lòng nhập tin nhắn');
+                hasError = true;
+            } else if (!validators.message(message)) {
+                showError('contact-message', 'Tin nhắn phải ít nhất 10 ký tự');
+                hasError = true;
+            }
+
+            if (hasError) return;
+
+            // Save contact message to localStorage
+            const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+            messages.push({
+                name: name,
+                email: email,
+                phone: phone,
+                subject: subject,
+                message: message,
+                date: new Date().toISOString()
+            });
+            localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+            // Show success message
+            const successMsg = document.getElementById('success-message');
+            successMsg.classList.add('show');
+            document.getElementById('contact-form').reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        }
+
+        function clearErrors(formId) {
+            const form = document.getElementById(formId);
+            const inputs = form.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.classList.remove('input-error');
+            });
+            const errorMsgs = form.querySelectorAll('.error-msg');
+            errorMsgs.forEach(msg => {
+                msg.textContent = '';
+                msg.classList.remove('show');
+            });
+        }
+
+        function showError(fieldId, message) {
+            const input = document.getElementById(fieldId);
+            const errorMsg = document.getElementById(fieldId + '-error');
+            
+            if (input && errorMsg) {
+                input.classList.add('input-error');
+                errorMsg.textContent = message;
+                errorMsg.classList.add('show');
+            }
+        }
+
+        function checkUserStatus() {
+            const currentUser = localStorage.getItem('currentUser');
+            const authButtons = document.getElementById('auth-buttons');
+            const userMenu = document.getElementById('user-menu');
+            
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                authButtons.style.display = 'none';
+                userMenu.style.display = 'flex';
+                document.getElementById('user-greeting').textContent = `Xin chào, ${user.full_name}!`;
+            } else {
+                authButtons.style.display = 'flex';
+                userMenu.style.display = 'none';
+            }
+        }
+
+        document.getElementById('btn-logout')?.addEventListener('click', function() {
+            if (confirm('Bạn có chắc muốn đăng xuất?')) {
+                localStorage.removeItem('currentUser');
+                alert('Đã đăng xuất thành công!');
+                checkUserStatus();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "user_id": 1001,
+      "full_name": "Nguyễn Văn A",
+      "email": "nguyenvana@example.com",
+      "password": "khach1001@",
+      "phone_number": "0987654321",
+      "address": "Số 6, Đường XYZ, Quận ABC",
+      "joined_date": "2025-12-11T10:00:00Z"
+    },
+    {
+      "user_id": 1002,
+      "full_name": "Trần Thị B",
+      "email": "tranthib@example.com",
+      "password": "khach1002@",
+      "phone_number": "0912345678",
+      "address": "Phòng 601, Chung cư N6",
+      "joined_date": "2025-12-11T10:05:00Z"
+    }
+  ]
+}

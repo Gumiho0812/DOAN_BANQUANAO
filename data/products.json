@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Áo Thun Cơ Bản Trắng",
+        "category": "áo-thun",
+        "price": 199000,
+        "image": "../assets/images/product-1.jpg",
+        "description": "Áo thun cơ bản màu trắng, chất liệu cotton 100%, thoáng mát, dễ chăm sóc",
+        "stock": 50,
+        "sizes": ["XS", "S", "M", "L", "XL", "XXL"]
+    },
+    {
+        "id": 2,
+        "name": "Áo Khoác Jean Xanh",
+        "category": "áo-khoác",
+        "price": 599000,
+        "image": "../assets/images/product-2.jpg",
+        "description": "Áo khoác jean xanh đậm, form rộng, kiểu dáng vintage, dập nếp tinh tế",
+        "stock": 30,
+        "sizes": ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+        "id": 3,
+        "name": "Quần Dài Đen Chuẩn",
+        "category": "quần-dài",
+        "price": 399000,
+        "image": "../assets/images/product-3.jpg",
+        "description": "Quần dài đen trơn, form ôm vừa phải, thoáng mát, phù hợp mọi dịp",
+        "stock": 45,
+        "sizes": ["28", "29", "30", "31", "32", "33", "34"]
+    },
+    {
+        "id": 4,
+        "name": "Quần Shorts Khaki",
+        "category": "quần-ngắn",
+        "price": 299000,
+        "image": "../assets/images/product-4.jpg",
+        "description": "Quần shorts khaki cổ điển, chiều dài gập gối, lịch lãm và thoáng mát",
+        "stock": 40,
+        "sizes": ["28", "29", "30", "31", "32", "33"]
+    },
+    {
+        "id": 5,
+        "name": "Áo Thun In Họa Tiết",
+        "category": "áo-thun",
+        "price": 249000,
+        "image": "../assets/images/product-5.jpg",
+        "description": "Áo thun cotton in họa tiết độc đáo, chất lượng in tốt, không phai màu",
+        "stock": 35,
+        "sizes": ["XS", "S", "M", "L", "XL", "XXL"]
+    },
+    {
+        "id": 6,
+        "name": "Belt Da Nâu",
+        "category": "phụ-kiện",
+        "price": 149000,
+        "image": "../assets/images/product-6.jpg",
+        "description": "Thắt lưng da thật màu nâu, khóa bạc, phù hợp với mọi kiểu quần áo",
+        "stock": 60,
+        "sizes": ["One Size"]
+    }
+]

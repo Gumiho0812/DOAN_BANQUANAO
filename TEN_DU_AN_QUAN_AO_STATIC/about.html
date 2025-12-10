@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về Chúng Tôi - NHÀ SIIX</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .about-page {
+            background-color: var(--white);
+        }
+
+        .about-hero {
+            background: linear-gradient(135deg, #df6743 0%, #c85a3a 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-hero p {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .about-section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .about-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .about-intro {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+        }
+
+        .about-intro p {
+            margin-bottom: 20px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: var(--light-bg);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .goals-list {
+            max-width: 800px;
+            margin: 40px auto 0;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .goals-list li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .goals-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .goals-list strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .mission-highlight {
+            background: rgba(223, 103, 67, 0.1);
+            padding: 30px;
+            border-left: 4px solid var(--primary-color);
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .mission-highlight p {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            background: var(--light-bg);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 15px 40px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .cta-btn-primary:hover {
+            background-color: #b8523c;
+            border-color: #b8523c;
+            transform: scale(1.05);
+        }
+
+        .cta-btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .cta-btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero h1 {
+                font-size: 36px;
+            }
+
+            .about-section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 60px 0;
+            }
+
+            .about-hero h1 {
+                font-size: 28px;
+            }
+
+            .about-hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo_nhom.jpg" alt="Nhà SIIX" class="logo-img" width="500" height="500">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="products.html">MUA SẮM</a></li>
+                    <li><a href="about.html">NHÀ SIIX</a></li>
+                    <li class="auth-buttons" id="auth-buttons">
+                        <a href="login.html" class="btn-login">ĐĂNG NHẬP</a>
+                        <a href="register.html" class="btn-register">ĐĂNG KÝ</a>
+                    </li>
+                    <li class="user-menu" id="user-menu" style="display: none;">
+                        <span class="user-greeting" id="user-greeting"></span>
+                        <button class="btn-logout" id="btn-logout">ĐĂNG XUẤT</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>NHÀ SIIX | VỀ CHÚNG TÔI</h1>
+            <p>🖤 KHÔNG CHỈ LÀ QUẦN ÁO, ĐÓ LÀ PHONG CÁCH SỐNG</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="about-page">
+        <!-- Intro Section -->
+        <section class="about-section">
+            <div class="container">
+                <p class="section-subtitle">Welcome to The Fam - Tuyên ngôn của thế hệ mới.</p>
+                
+                <div class="about-intro">
+                    <p>Chúng tôi là NHÀ SIIX, hay đơn giản là NHÀ 6. Ra đời với mục tiêu mang đến một định nghĩa mới về thời trang nam giới: <strong>Mạnh mẽ, Tối giản và Đầy tính biểu tượng.</strong> Chúng tôi tin rằng quần áo không chỉ là vật che chắn, mà là ngôn ngữ để người trẻ thể hiện cá tính, sự độc lập và gu thẩm mỹ riêng biệt của mình.</p>
+
+                    <p>NHÀ SIIX tập trung vào phân khúc <strong>Streetwear và Smart-Casual</strong> hiện đại, nơi chất lượng và thiết kế được ưu tiên hàng đầu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Values Section -->
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">🔥 TẦM NHÌN & GIÁ TRỊ CỐT LÕI</h2>
+                
+                <p style="text-align: center; font-size: 16px; color: var(--text-light); margin-bottom: 50px;">Tại NHÀ SIIX, mọi sản phẩm đều được tạo ra dựa trên 3 trụ cột giá trị:</p>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>1. CHẤT LƯỢNG</h3>
+                        <p><strong>SIX-GRADE QUALITY</strong></p>
+                        <p style="margin-top: 15px;">Mỗi sản phẩm đều được chọn lọc kỹ lưỡng, từ chất liệu Cotton/Kaki cao cấp đến đường may tinh tế. Chúng tôi đảm bảo mang đến sự thoải mái tuyệt đối và độ bền bỉ vượt trội.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <h3>2. CÁ TÍNH</h3>
+                        <p><strong>URBAN EXPRESSION</strong></p>
+                        <p style="margin-top: 15px;">NHÀ SIIX luôn cập nhật các xu hướng toàn cầu, nhưng không chạy theo số đông. Các thiết kế của chúng tôi mang đậm dấu ấn đô thị (Urban).</p>
+                    </div>
+
+                    <div class="value-card">
+                        <h3>3. CỘNG ĐỒNG</h3>
+                        <p><strong>THE NHÀ 6 FAM</strong></p>
+                        <p style="margin-top: 15px;">Chúng tôi muốn xây dựng một cộng đồng NHÀ 6 - nơi những người trẻ có chung niềm đam mê phong cách và sự tử tế.</p>
+                    </div>
+                </div>
+
+                <div class="mission-highlight">
+                    <p>Khi bạn mặc đồ của NHÀ SIIX, bạn không chỉ mua một sản phẩm, mà đang gia nhập một ngôi nhà của những người biết giá trị của bản thân.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals Section -->
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">🎯 MỤC TIÊU CỦA NHÀ 6</h2>
+                
+                <p style="text-align: center; font-size: 16px; color: var(--text-light); margin-bottom: 50px;">NHÀ SIIX mong muốn trở thành thương hiệu Local Brand hàng đầu, là lựa chọn số một của giới trẻ Việt Nam khi cần tìm kiếm:</p>
+
+                <ul class="goals-list">
+                    <li><strong>Sự Phóng Khoáng</strong> trong các thiết kế Oversize/Relaxed Fit.</li>
+                    <li><strong>Sự Lịch Lãm</strong> trong các item Casual dễ phối đồ.</li>
+                    <li><strong>Sự Tận Tâm</strong> trong từng khâu phục vụ, từ tư vấn size đến chính sách đổi trả minh bạch.</li>
+                </ul>
+
+                <div class="mission-highlight" style="margin-top: 50px; text-align: center; font-size: 18px; font-weight: 700;">
+                    <p>Đến với NHÀ SIIX, bạn sẽ tìm thấy phiên bản "chất" nhất của chính mình.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h3>Sẵn sàng tham gia NHÀ 6?</h3>
+                <p>Khám phá bộ sưu tập của chúng tôi hoặc liên hệ với chúng tôi để biết thêm chi tiết</p>
+                <div class="cta-buttons">
+                    <a href="products.html" class="cta-btn cta-btn-primary">Mua Sắm Ngay</a>
+                    <a href="index.html#lien-he" class="cta-btn cta-btn-outline">Liên Hệ</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>NHÀ SIIX</h4>
+                <p>Thương hiệu thời trang Local Brand với sứ mệnh mang đến phong cách sống cho giới trẻ Việt Nam.</p>
+            </div>
+            <div class="footer-col">
+                <h4>LIÊN KẾT</h4>
+                <a href="index.html" class="footer-link">Trang Chủ</a>
+                <a href="products.html" class="footer-link">Mua Sắm</a>
+                <a href="about.html" class="footer-link">Về Chúng Tôi</a>
+            </div>
+            <div class="footer-col">
+                <h4>HỖTRỢ</h4>
+                <a href="#" class="footer-link">Chính Sách Đổi Trả</a>
+                <a href="#" class="footer-link">Hướng Dẫn Chọn Size</a>
+                <a href="#" class="footer-link">Câu Hỏi Thường Gặp</a>
+            </div>
+            <div class="footer-col">
+                <h4>LIÊN HỆ</h4>
+                <p style="font-size: 14px; line-height: 1.8;">
+                    📧 Email: info@nhasiix.com<br>
+                    📱 Hotline: 0987 654 321<br>
+                    📍 Địa chỉ: Hà Nội, Việt Nam
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color); margin-top: 40px; color: var(--text-light); font-size: 12px;">
+            <p>&copy; 2024 NHÀ SIIX. All rights reserved. | Made with 🖤</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserStatus();
+            document.getElementById('btn-logout')?.addEventListener('click', function() {
+                if (confirm('Bạn có chắc muốn đăng xuất?')) {
+                    localStorage.removeItem('currentUser');
+                    alert('Đã đăng xuất thành công!');
+                    checkUserStatus();
+                }
+            });
+        });
+
+        function checkUserStatus() {
+            const currentUser = localStorage.getItem('currentUser');
+            const authButtons = document.getElementById('auth-buttons');
+            const userMenu = document.getElementById('user-menu');
+            
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                authButtons.style.display = 'none';
+                userMenu.style.display = 'flex';
+                document.getElementById('user-greeting').textContent = `Xin chào, ${user.full_name}!`;
+            } else {
+                authButtons.style.display = 'flex';
+                userMenu.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
