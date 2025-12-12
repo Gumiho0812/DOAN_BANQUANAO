@@ -1,0 +1,242 @@
+.about-page {
+    background-color: var(--white);
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #df6743 0%, #c85a3a 100%);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-hero p {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.about-section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    text-align: center;
+    font-style: italic;
+}
+
+.about-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.about-intro p {
+    margin-bottom: 20px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.value-card {
+    background: var(--light-bg);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border-top: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.value-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.goals-list {
+    max-width: 800px;
+    margin: 40px auto 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.goals-list li {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.goals-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.goals-list strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.mission-highlight {
+    background: rgba(223, 103, 67, 0.1);
+    padding: 30px;
+    border-left: 4px solid var(--primary-color);
+    margin: 40px 0;
+    border-radius: 4px;
+}
+
+.mission-highlight p {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.cta-section {
+    background: var(--light-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-section h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.cta-btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.cta-btn-primary:hover {
+    background-color: #b8523c;
+    border-color: #b8523c;
+    transform: scale(1.05);
+}
+
+.cta-btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.cta-btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h1 {
+        font-size: 36px;
+    }
+
+    .about-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 60px 0;
+    }
+
+    .about-hero h1 {
+        font-size: 28px;
+    }
+
+    .about-hero p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        width: 100%;
+    }
+}
