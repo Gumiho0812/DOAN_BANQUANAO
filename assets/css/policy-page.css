@@ -1,0 +1,71 @@
+/* Hero Section for Policy Pages */
+.policy-hero {
+    background-color: #f4f4f4;
+    color: var(--text-dark);
+    text-align: center;
+    padding: 60px 20px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../images/footer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.policy-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.policy-hero p {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Main Content for Policy Pages */
+.policy-page {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.policy-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.policy-section .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+}
+
+.policy-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.policy-list {
+    list-style-position: inside;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.policy-list li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.note {
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    font-style: italic;
+}

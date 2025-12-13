@@ -21,7 +21,7 @@ const tips = [
                 <li><strong>32-33:</strong> Chiều cao 1m75-1m85</li>
                 <li><strong>34+:</strong> Chiều cao trên 1m85</li>
             </ul>
-            <p><strong>💡 Tip:</strong> Nếu không chắc, chọn size to hơn là tốt hơn vì NHÀ SIIX yêu thích form relaxed fit!</p>
+            <p><strong>💡 Tip:</strong> Nếu không chắc, chọn size to hơn là tốt hơn vì NHÀ SEVEN yêu thích form relaxed fit!</p>
         `
     },
     {
@@ -56,7 +56,7 @@ const tips = [
         description: "Cách phối đồ để tạo ra những bộ outfit trendy và hợp mọi dịp.",
         content: `
             <h2 class="tip-modal-title">🎨 Mix & Match Outfit</h2>
-            <p>NHÀ SIIX được thiết kế để dễ dàng kết hợp tạo nên những bộ outfit phong cách:</p>
+            <p>NHÀ SEVEN được thiết kế để dễ dàng kết hợp tạo nên những bộ outfit phong cách:</p>
             <strong>Streetwear Casual:</strong>
             <ul>
                 <li>Áo Thun + Quần Cargo + Sneaker = Chill & Cool</li>
@@ -84,7 +84,7 @@ const tips = [
         description: "Hiểu rõ hơn về xu hướng Streetwear hiện đại.",
         content: `
             <h2 class="tip-modal-title">👔 Phong Cách Streetwear</h2>
-            <p>Streetwear không chỉ là một xu hướng, nó là một cách sống mà NHÀ SIIX hết lòng ủng hộ:</p>
+            <p>Streetwear không chỉ là một xu hướng, nó là một cách sống mà NHÀ SEVEN hết lòng ủng hộ:</p>
             <strong>Đặc Điểm Streetwear:</strong>
             <ul>
                 <li>Form Relaxed/Oversized - thoải mái và thể hiện cá tính</li>
@@ -138,7 +138,7 @@ const tips = [
         description: "Hiểu rõ các loại chất liệu để lựa chọn sản phẩm tốt nhất.",
         content: `
             <h2 class="tip-modal-title">💎 Chất Liệu & Chất Lượng</h2>
-            <p>Chất liệu tốt = Áo bền + Thoải mái + Đẹp lâu. NHÀ SIIX chỉ dùng chất liệu cao cấp:</p>
+            <p>Chất liệu tốt = Áo bền + Thoải mái + Đẹp lâu. NHÀ SEVEN chỉ dùng chất liệu cao cấp:</p>
             <strong>Cotton 100%:</strong>
             <ul>
                 <li>✓ Thoáng khí tốt nhất</li>
