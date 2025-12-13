@@ -335,16 +335,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Checkout button
     document.getElementById('checkout-btn').addEventListener('click', function() {
+        if (cart.length === 0) {
+            alert('Giỏ hàng của bạn đang trống!');
+            return;
+        }
+
         const currentUser = localStorage.getItem('currentUser');
         if (!currentUser) {
             alert('Vui lòng đăng nhập để thanh toán');
             window.location.href = 'login.html';
             return;
         }
-
+        
         const user = JSON.parse(currentUser);
         const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        
+
+        // Create a new order object
+        const newOrder = {
+            order_id: `ORD-${Date.now()}`,
+            user_id: user.user_id,
+            order_date: new Date().toISOString(),
+            total_amount: total,
+            items: [...cart] // Create a copy of the cart items
+        };
+
+        // Save order to localStorage
+        const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory') || '[]');
+        purchaseHistory.push(newOrder);
+        localStorage.setItem('purchaseHistory', JSON.stringify(purchaseHistory));
+
+        // Show success message and clear cart
         alert(`Cảm ơn ${user.full_name}!\n\nTổng tiền: ${formatPrice(total)}\n\nĐơn hàng của bạn sẽ được xử lý sớm.`);
         cart = [];
         saveCart();

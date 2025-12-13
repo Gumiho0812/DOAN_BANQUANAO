@@ -65,7 +65,7 @@ document.querySelector('.newsletter-form')?.addEventListener('submit', function(
     const email = this.querySelector('input[type="email"]').value;
     
     if (email) {
-        alert(`Thank you! Your email "${email}" has been registered.`);
+        alert(`Thank you BOSS! Đã nhận "${email}" BOSS đợi BIG SALE nhé.`);
         this.reset();
     }
 });

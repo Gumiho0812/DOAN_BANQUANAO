@@ -1,0 +1,115 @@
+.order-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid var(--border-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.order-id {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.order-date {
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-left: 15px;
+}
+
+.order-total {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.order-total strong {
+    color: var(--primary-color);
+}
+
+.order-items-container {
+    padding: 10px 20px 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px dashed #eee;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    flex: 3;
+    color: var(--text-dark);
+}
+
+.item-qty {
+    flex: 1;
+    text-align: center;
+    color: var(--text-gray);
+}
+
+.item-price {
+    flex: 1;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Dropdown for user menu */
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 100;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a, .user-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.user-dropdown a:hover, .user-dropdown button:hover {
+    background-color: #f4f4f4;
+}
